@@ -77,28 +77,43 @@
             </div><!--end container-->
 		</nav><!--end navbar-->
         <!-- Navbar End -->
+<!-- Start Hero -->
+<section class="full-home personal-hero d-flex align-items-center background-effect overflow-hidden" id="home">
+    <div class="container-fluid">
+        <div class="bg-overlay bg-overlay-primary jarallax" data-jarallax data-speed="0.5" style="background: url('images/home/02.png') top;"></div>
 
-        <!-- HOME START-->
-        <section class="bg-home bg-light d-table w-100" style="background-image:url('images/home/01.png')" id="home">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <div class="title-heading mt-5">
-                            <h6 class="sub-title">Looking for a linkedin growth strategist !</h6>
-                            <h1 class="heading text-primary mb-3">I'm Bhanneita Mahanta</h1>
-                            <p class="para-desc text-muted">I’m not just an entrepreneur; I’m a storyteller at heart. My mission is to empower busy professionals—founders, CEOs, COOs, and coaches—to craft their unique narratives and shine on platforms like LinkedIn.</p>
-                            <div class="mt-4 pt-2">
-                                <a href="#contact" class="btn btn-primary rounded mb-2 me-2">Let's Connect</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container--> 
-            <a href="#about" data-scroll-nav="1" class="mouse-icon rounded-pill bg-transparent mouse-down">
-                <span class="wheel position-relative d-block mover"></span>
-            </a>
-        </section><!--end section-->
-        <!-- HOME END-->
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="title-heading">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <h4 class="display-3 title fw-bold mb-0">Bhanneita <br> <span class="typewrite" data-period="2000" data-type='[ "Mahanta!"]'></span> </h4>                            
+                                
+                            </div><!--end col-->
+    
+                            <div class="col-lg-5 offset-lg-3 col-md-6 mt-4 mt-sm-0">
+                            
+                                <div class="rounded personal-hero-para">
+                                    <h5 class="mb-3 sub-title">Looking for a linkedin growth strategist!</h5>
+                        
+                                    <p class="para-desc para mb-0">I’m not just an entrepreneur; I’m a storyteller at heart. My mission is to empower busy professionals — founders, CEOs, COOs, and coaches — to craft their unique narratives and shine on platforms like LinkedIn.</p>
+                                
+                                    <div class="mt-4">
+                                        <a href="#contact" class="btn btn-primary rounded mb-2 me-2">Let's Connect</a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </div><!--end container fluid-->
+    <div class="personal-overlay bg-overlay bg-primary-gradient-overlay"></div>
+</section><!--end section-->
+<!-- End Hero -->
+
         
         <!-- About Start -->
         <section class="section pb-3" id="about">
@@ -886,25 +901,24 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="custom-form mb-sm-30">
-                            <form method="post" name="myForm" onsubmit="return validateForm()">
-                                <p id="error-msg"></p>
-                                <div id="simple-msg"></div>
+                            <form method="POST" name="myForm" id="form">
+                                <input type="hidden" name="access_key" value="e6d85706-ef15-4643-8989-0699fc99bd04">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-6">
                                                 <div class="form-group">
-                                                    <input name="name" id="name" type="text" class="form-control border rounded" placeholder="First Name :">
+                                                    <input name="name" id="name" required type="text" class="form-control border rounded" placeholder="Your Name :">
                                                 </div>
                                             </div><!--end col-->
                                             <div class="col-lg-12 col-md-6">
                                                 <div class="form-group">
-                                                    <input name="email" id="email" type="email" class="form-control border rounded" placeholder="Your email :">
+                                                    <input name="email" id="email" required type="email" class="form-control border rounded" placeholder="Your email :">
                                                 </div> 
                                             </div><!--end col-->
                                             <div class="col-lg-12">
                                                 <div class="form-group">
-                                                    <input name="subject" id="subject" class="form-control border rounded" placeholder="Your subject :">
+                                                    <input name="phone" id="phone" required class="form-control border rounded" placeholder="Your contact number :">
                                                 </div>                                                                               
                                             </div><!--end col-->
                                         </div><!--end row-->
@@ -912,15 +926,18 @@
 
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <textarea name="comments" id="comments" rows="4" class="form-control border rounded" placeholder="Your Message :"></textarea>
+                                            <textarea name="comments" id="comments" required rows="4" class="form-control border rounded" placeholder="Your Message :"></textarea>
                                         </div>
                                     </div><!--end col-->
 
                                     <div class="col-sm-12 text-end">
                                         <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
                                     </div>
-                                </div>
+                                </div>                         
+                                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">                              
+                                <div id="result" style="display: none;" class="alert alert-success"></div>                        
                             </form>
+
                         </div><!--end custom-form-->
                     </div><!--end col-->
                 </div><!--end row-->
@@ -962,6 +979,7 @@
         <!-- javascript -->
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/gumshoe.js"></script>
+        <script src="js/parallax.js"></script>
         <!-- SLIDER -->
         <script src="js/tiny-slider.js "></script>
         <!-- Lightbox -->
@@ -969,8 +987,50 @@
         <script src="js/shuffle.min.js"></script>
         <!-- Feather icon -->
         <script src="js/feather.min.js"></script>
+        <script src="js/typed.js"></script>
         <!-- Main Js -->
         <script src="js/plugins.init.js"></script>
         <script src="js/app.js"></script>
+        <script>
+            const form = document.getElementById('form');
+            const result = document.getElementById('result');
+            
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              const formData = new FormData(form);
+              const object = Object.fromEntries(formData);
+              const json = JSON.stringify(object);
+              result.innerHTML = "Please wait..."
+            
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        result.style.display = "";
+                        if (response.status == 200) {
+                            result.innerHTML = "Thanks for reaching out! We're on it! 🚀 You’ll hear from us soon";
+                        } else {
+                            console.log(response);
+                            result.innerHTML = json.message;
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "Something went wrong!";
+                    })
+                    .then(function() {
+                        form.reset();
+                        setTimeout(() => {
+                            result.style.display = "none";
+                        }, 3000);
+                    });
+            });
+            </script>
     </body>
 </html>
